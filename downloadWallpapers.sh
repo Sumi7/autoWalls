@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# store script directory for later reference
+scriptDirectory=$(pwd)
+
 # create directory for wallpaper data
 rootDirectory=~/Sumit/automaticWall
 if [ ! -d $directory ]; then
@@ -8,6 +11,7 @@ fi;
 
 # create directory for wallpaper data
 bgDirectory=~/Sumit/automaticWall/bg
+
 if [ ! -d $bgDirectory ]; then
   mkdir $bgDirectory
 fi;
@@ -18,8 +22,6 @@ cd $rootDirectory
 # url for reddit wallpapers
 reddit="https://www.reddit.com/r/wallpapers/.json"
 
-#fileName
-fileName="img.jpg"
 
 #REQUEST
 #keep requesting until data is received
@@ -36,6 +38,10 @@ mapfile -t configArr < <(jq -c -r '.data.children[].data.preview.images[0].sourc
 
 # for each url download image
 for config in "${configArr[@]}"; do
-  # jq -r $config
   wget --directory-prefix=$bgDirectory -A 'random' -nc -c $config
 done
+
+# set wallpaper randomly
+# 1. change shell mod to executable
+chmod +x $scriptDirectory/setWallpaper.sh
+bash $scriptDirectory/setWallpaper.sh
