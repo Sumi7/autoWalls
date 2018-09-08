@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # store script directory for later reference
-scriptDirectory=$(pwd)
+scriptDirectory=~/Sumit/learning-area/Projects/autoWalls
 
 # create directory for wallpaper data
 rootDirectory=~/Sumit/automaticWall
@@ -14,13 +14,15 @@ bgDirectory=~/Sumit/automaticWall/bg
 
 if [ ! -d $bgDirectory ]; then
   mkdir $bgDirectory
+else
+  rm -r $bgDirectory/*
 fi;
 
 # get in the root directory
 cd $rootDirectory
-
+echo "root $rootDirectory"
 # url for reddit wallpapers
-reddit="https://www.reddit.com/r/wallpapers/hot/.json"
+reddit="https://www.reddit.com/r/wallpapers/top/.json"
 
 
 #REQUEST
@@ -43,5 +45,6 @@ done
 
 # set wallpaper randomly
 # 1. change shell mod to executable
+echo "dir $scriptDirectory"
 chmod +x $scriptDirectory/setWallpaper.sh
 bash $scriptDirectory/setWallpaper.sh

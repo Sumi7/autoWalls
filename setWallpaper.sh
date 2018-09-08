@@ -17,7 +17,7 @@ do
   randomBackground=file://${files[RANDOM % ${#files[@]}]}
 done
 
-# set background
+# set backgrounds
 gsettings set org.gnome.desktop.background picture-uri "$randomBackground"
 
 #update previousBackground variable
