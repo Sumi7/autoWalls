@@ -20,7 +20,7 @@ fi;
 cd $rootDirectory
 
 # url for reddit wallpapers
-reddit="https://www.reddit.com/r/wallpapers/.json"
+reddit="https://www.reddit.com/r/wallpapers/hot/.json"
 
 
 #REQUEST
