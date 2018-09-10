@@ -1,9 +1,9 @@
 #!/bin/bash
 
-imagesDir=~/Sumit/automaticWall/bg
+WDD=/usr/lib/autowalls
 
 # find a random fle from folder
-files=($imagesDir/*)
+files=($WDD/*)
 
 # keep track of old background
 previousBackground=""
