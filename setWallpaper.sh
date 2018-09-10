@@ -1,6 +1,7 @@
 #!/bin/bash
 
-WDD=/usr/lib/autowalls
+CLIENT="reddit"
+WDD=/usr/lib/autowalls/$CLIENT
 
 # find a random fle from folder
 files=($WDD/*)
