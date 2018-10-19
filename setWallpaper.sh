@@ -1,6 +1,7 @@
 #!/bin/bash
 
-imagesDir=~/Sumit/automaticWall/bg
+CLIENT="reddit"
+WDD=/usr/lib/autowalls/$CLIENT
 
 # find a random fle from folder
 files=($imagesDir/*)

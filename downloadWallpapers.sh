@@ -24,7 +24,6 @@ echo "root $rootDirectory"
 # url for reddit wallpapers
 reddit="https://www.reddit.com/r/wallpapers/top/.json"
 
-
 #REQUEST
 #keep requesting until data is received
 
@@ -45,6 +44,5 @@ done
 
 # set wallpaper randomly
 # 1. change shell mod to executable
-echo "dir $scriptDirectory"
-chmod +x $scriptDirectory/setWallpaper.sh
-bash $scriptDirectory/setWallpaper.sh
+chmod +x $SID/setWallpaper.sh
+bash $SID/setWallpaper.sh
