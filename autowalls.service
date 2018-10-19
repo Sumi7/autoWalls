@@ -1,0 +1,11 @@
+[Unit]
+Description = autoWalls Service
+
+[Service]
+Type = forking
+ExecStart = autoWalls.sh init
+ExecStop = /bin/bash /home/sumit/Sumit/learning-area/Projects/autoWalls/start.sh stop
+ExecReload = autoWalls.sh reload
+
+[Install]
+WantedBy=multi-user.target
