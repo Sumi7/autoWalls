@@ -4,7 +4,7 @@ CLIENT="reddit"
 WDD=/usr/lib/autowalls/$CLIENT
 
 # find a random fle from folder
-files=($WDD/*)
+files=($imagesDir/*)
 
 # keep track of old background
 previousBackground=""

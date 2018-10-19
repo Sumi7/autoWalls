@@ -1,8 +1,27 @@
 #!/bin/bash
 
-SID="/usr/share/autowalls/"
-WDD="/usr/lib/autowalls/"
+# store script directory for later reference
+scriptDirectory=~/Sumit/learning-area/Projects/autoWalls
 
+# create directory for wallpaper data
+rootDirectory=~/Sumit/automaticWall
+if [ ! -d $directory ]; then
+  mkdir $directory
+fi;
+
+# create directory for wallpaper data
+bgDirectory=~/Sumit/automaticWall/bg
+
+if [ ! -d $bgDirectory ]; then
+  mkdir $bgDirectory
+else
+  rm -r $bgDirectory/*
+fi;
+
+# get in the root directory
+cd $rootDirectory
+echo "root $rootDirectory"
+# url for reddit wallpapers
 reddit="https://www.reddit.com/r/wallpapers/top/.json"
 
 #REQUEST
@@ -20,7 +39,7 @@ mapfile -t configArr < <(jq -c -r '.data.children[].data.preview.images[0].sourc
 
 # for each url download image
 for config in "${configArr[@]}"; do
-  wget --directory-prefix=$WDD/reddit -A 'random' -nc -c $config
+  wget --directory-prefix=$bgDirectory -A 'random' -nc -c $config
 done
 
 # set wallpaper randomly
